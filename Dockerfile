@@ -7,7 +7,7 @@ WORKDIR /opt
 ENV GOPATH /go
 ENV RUBYOPT -EUTF-8
 ENV PATH $PATH:/usr/local/go/bin
-ENV PATH $PATH:/root/go/bin
+ENV PATH $PATH:/go/bin
 RUN go get -u github.com/golang/dep/cmd/dep
 
 COPY .licensed.yaml /opt/.licensed.yaml
