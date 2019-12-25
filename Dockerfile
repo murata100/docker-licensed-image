@@ -19,6 +19,7 @@ RUN cd /opt && tar xvf licensed
 
 # RUN go get gopkg.in/src-d/go-license-detector.v3/cmd/license-detector \
 #     && go build -v gopkg.in/src-d/go-license-detector.v3/cmd/license-detector
+RUN go get github.com/boyter/lc
 
 # Inherit this image and do the following (golang dep)
 # COPY . /go/src/local
