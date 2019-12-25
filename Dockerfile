@@ -3,12 +3,13 @@ FROM ruby:2.6-slim-stretch
 RUN apt-get update && apt-get install -y wget git locales && locale-gen ja_JP.UTF-8
 RUN wget https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz
 RUN tar -C /usr/local -xzf go1.11.5.linux-amd64.tar.gz
+RUN go get -u github.com/golang/dep/cmd/dep
 WORKDIR /opt
 ENV GOPATH /go
 ENV RUBYOPT -EUTF-8
 ENV PATH $PATH:/usr/local/go/bin
+ENV PATH $PATH:/root/go/bin
 ENV PATH $PATH:/go/bin
-RUN go get -u github.com/golang/dep/cmd/dep
 
 COPY .licensed.yaml /opt/.licensed.yaml
 # COPY licensed-2.2.0-linux-x64.tar.gz /opt/licensed-2.2.0-linux-x64.tar.gz
